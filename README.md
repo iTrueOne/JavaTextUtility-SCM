@@ -4,7 +4,7 @@ This is a simple Java utility tool developed for the Software Configuration Mana
 
 ## Tool Description
 
-This tool supports basic text utility operations.
+This tool supports palindrome checking and text utility operations.
 
 ## Current Features
 
