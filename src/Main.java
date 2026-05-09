@@ -12,6 +12,7 @@ public class Main {
             System.out.println("\nChoose an option:");
             System.out.println("1. Count characters");
             System.out.println("2. Count words");
+            System.out.println("3. Reverse text");
             System.out.println("0. Exit");
             System.out.print("Enter your choice: ");
 
@@ -29,6 +30,12 @@ public class Main {
                     System.out.print("Enter text: ");
                     String wordText = scanner.nextLine();
                     System.out.println("Number of words: " + countWords(wordText));
+                    break;
+
+                case 3:
+                    System.out.print("Enter text: ");
+                    String reverseText = scanner.nextLine();
+                    System.out.println("Reversed text: " + reverseText(reverseText));
                     break;
 
                 case 0:
@@ -53,5 +60,9 @@ public class Main {
             return 0;
         }
         return text.trim().split("\\s+").length;
+    }
+
+    public static String reverseText(String text) {
+        return new StringBuilder(text).reverse().toString();
     }
 }
