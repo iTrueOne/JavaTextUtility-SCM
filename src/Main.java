@@ -11,6 +11,7 @@ public class Main {
         while (running) {
             System.out.println("\nChoose an option:");
             System.out.println("1. Count characters");
+            System.out.println("2. Count words");
             System.out.println("0. Exit");
             System.out.print("Enter your choice: ");
 
@@ -20,8 +21,14 @@ public class Main {
             switch (choice) {
                 case 1:
                     System.out.print("Enter text: ");
-                    String text = scanner.nextLine();
-                    System.out.println("Number of characters: " + countCharacters(text));
+                    String charText = scanner.nextLine();
+                    System.out.println("Number of characters: " + countCharacters(charText));
+                    break;
+
+                case 2:
+                    System.out.print("Enter text: ");
+                    String wordText = scanner.nextLine();
+                    System.out.println("Number of words: " + countWords(wordText));
                     break;
 
                 case 0:
@@ -39,5 +46,12 @@ public class Main {
 
     public static int countCharacters(String text) {
         return text.length();
+    }
+
+    public static int countWords(String text) {
+        if (text == null || text.trim().isEmpty()) {
+            return 0;
+        }
+        return text.trim().split("\\s+").length;
     }
 }
